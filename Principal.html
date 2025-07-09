@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio 2025 - Nuestros Recuerdos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-sky: #B0E0E6;
+            --color-light-blue: #ADD8E6;
+            --color-powder-blue: #B0E0E6;
+            --color-baby-blue: #89CFF0;
+            --color-steel-blue: #4682B4;
+            --color-lavender: #E6E6FA;
+            --color-bg: #F0F8FF;
+            --color-text: #5D8AA8;
+            --color-accent: #5D8AA8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(176, 224, 230, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(137, 207, 240, 0.15) 0%, transparent 25%);
+            position: relative;
+        }
+
+        /* Animaciones flotantes */
+        .floating-element {
+            position: absolute;
+            color: var(--color-baby-blue);
+            font-size: 1.8rem;
+            z-index: -1;
+            opacity: 0.5;
+            animation: floating 15s linear infinite;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                left: -10%;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                left: 110%;
+            }
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+            margin-bottom: 40px;
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: var(--color-steel-blue);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--color-baby-blue), transparent);
+        }
+
+        .year-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--color-steel-blue);
+            margin-bottom: 30px;
+            display: inline-block;
+            padding: 8px 25px;
+            background: rgba(176, 224, 230, 0.3);
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Sección del mes */
+        .month-section {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.85), rgba(248, 253, 255, 0.85));
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(70, 130, 180, 0.15);
+            border: 1px solid rgba(176, 224, 230, 0.4);
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .month-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, var(--color-baby-blue), var(--color-light-blue));
+            opacity: 0.1;
+            border-radius: 0 0 0 100%;
+        }
+
+        .month-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--color-light-blue), var(--color-sky));
+            opacity: 0.1;
+            border-radius: 0 100% 0 0;
+        }
+
+        .month-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .month-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            color: var(--color-steel-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .month-title i {
+            margin: 0 15px;
+            color: var(--color-baby-blue);
+            animation: spin 8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .memory-count {
+            font-size: 1.1rem;
+            color: var(--color-baby-blue);
+            display: inline-block;
+            padding: 5px 20px;
+            border: 1px dashed var(--color-light-blue);
+            border-radius: 30px;
+        }
+
+        /* Tarjeta de recuerdo */
+        .memory-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(245, 251, 255, 0.9));
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(70, 130, 180, 0.1);
+            border: 1px solid rgba(176, 224, 230, 0.5);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            animation: cardAppear 1.5s ease-out;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @keyframes cardAppear {
+            0% { opacity: 0; transform: translateY(50px) rotate(3deg); }
+            100% { opacity: 1; transform: translateY(0) rotate(0); }
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 15px 30px rgba(70, 130, 180, 0.2);
+        }
+
+        .memory-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--color-baby-blue), var(--color-light-blue));
+            border-radius: 6px 0 0 6px;
+        }
+
+        .memory-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--color-steel-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        .memory-title i {
+            margin-right: 15px;
+            color: var(--color-baby-blue);
+            font-size: 1.8rem;
+        }
+
+        .memory-date {
+            font-size: 1rem;
+            color: var(--color-baby-blue);
+            margin-bottom: 20px;
+            display: block;
+            font-style: italic;
+            border-bottom: 1px dashed var(--color-light-blue);
+            padding-bottom: 15px;
+        }
+
+        .memory-desc {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: var(--color-text);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .memory-desc::before {
+            content: """;
+            position: absolute;
+            top: -15px;
+            left: -5px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: var(--color-light-blue);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .memory-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 30px;
+            background: linear-gradient(to right, var(--color-baby-blue), var(--color-light-blue));
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.4s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(137, 207, 240, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory-link:hover {
+            background: linear-gradient(to right, var(--color-light-blue), var(--color-steel-blue));
+            box-shadow: 0 8px 20px rgba(70, 130, 180, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .memory-link::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -30%;
+            width: 20px;
+            height: 150%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.8s;
+        }
+
+        .memory-link:hover::before {
+            left: 120%;
+        }
+
+        .memory-link i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            margin: 60px 0 30px;
+            padding: 20px;
+            color: var(--color-steel-blue);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            opacity: 0.8;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Animaciones clave */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .year-title {
+                font-size: 2rem;
+            }
+            
+            .month-section {
+                padding: 25px;
+            }
+            
+            .month-title {
+                font-size: 2.5rem;
+            }
+            
+            .memory-card {
+                padding: 25px;
+            }
+            
+            .memory-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Efecto de confeti */
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--color-baby-blue);
+            border-radius: 50%;
+            animation: confetti-fall 5s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+        .logout-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.logout-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(to right, #ff5252, #ff7b7b);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logout-button {
+        top: 20px;
+        right: 20px;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Elementos flotantes -->
+    <div class="floating-element" style="top: 10%; animation-delay: 0s; animation-duration: 18s;">❄️</div>
+    <div class="floating-element" style="top: 20%; animation-delay: -3s; animation-duration: 22s; font-size: 2.2rem;">✨</div>
+    <div class="floating-element" style="top: 30%; animation-delay: -7s; animation-duration: 20s;">💎</div>
+    <div class="floating-element" style="top: 50%; animation-delay: -5s; animation-duration: 25s;">🌙</div>
+    <div class="floating-element" style="top: 70%; animation-delay: -10s; animation-duration: 17s;">⭐</div>
+    
+    <div class="container">
+        <header>
+            <h1>Nuestros Recuerdos</h1>
+            <div class="year-title">2025</div>
+        </header>
+     
+        <div class="month-section">
+            <div class="month-header">
+                <h2 class="month-title"><i class="fas fa-heart"></i> Julio <i class="fas fa-heart"></i></h2>
+                <div class="memory-count">1 recuerdo especial</div>
+            </div>
+            
+            <div class="memory-card">
+                <h3 class="memory-title"><i class="fas fa-star"></i> Día de Bombones </h3>
+                <span class="memory-date">08 de Julio, 2025</span>
+                <p class="memory-desc">Hoy, deja que tu corazón se exprese sin reservas, que tu alma dance al ritmo de la armonía universal, porque el amor está en todas partes: en cada respiro, en cada mirada y en cada palabra.
+
+                Este día es el recordatorio de que el amor, como la energía del universo, es infinito. Y cuando lo compartimos, crece, se expande, tocando las vidas de quienes nos rodean. Que tu corazón se llene de esa energía mágica que todo lo puede, porque hoy, el amor y la luz del cosmos están a tu favor.</p>
+                <a href="pagina02xio.html" class="memory-link"><i class="fas fa-images"></i> Revivir este momento</a>
+            </div>
+        </div>
+         <!-- Botón de cerrar sesión -->
+    <button id="logout-btn" class="logout-button">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+    </button>
+        <footer>
+            "El tiempo pasa, pero los recuerdos del corazón son eternos"
+        </footer>
+    </div>
+
+    <script>
+        // Crear más elementos flotantes
+        function createFloaters() {
+            const floaters = ['❄️', '✨', '💎', '🌙', '⭐', '💧', '🌊'];
+            const floater = document.createElement('div');
+            floater.className = 'floating-element';
+            floater.innerHTML = floaters[Math.floor(Math.random() * floaters.length)];
+            floater.style.left = Math.random() * 100 + 'vw';
+            floater.style.top = Math.random() * 20 + '%';
+            floater.style.animationDuration = (Math.random() * 20 + 15) + 's';
+            floater.style.fontSize = (Math.random() * 1 + 1.5) + 'rem';
+            floater.style.opacity = Math.random() * 0.4 + 0.3;
+            floater.style.animationDelay = '-' + (Math.random() * 20) + 's';
+            document.body.appendChild(floater);
+            
+            // Eliminar después de la animación
+            setTimeout(() => {
+                floater.remove();
+            }, 40000);
+        }
+        
+        // Generar flotadores cada 1.5 segundos
+        setInterval(createFloaters, 1500);
+        
+        // Crear confeti
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 75%)`;
+            confetti.style.width = (Math.random() * 10 + 5) + 'px';
+            confetti.style.height = confetti.style.width;
+            confetti.style.animationDuration = (Math.random() * 5 + 3) + 's';
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 6000);
+        }
+        
+        // Generar confeti cada 0.3 segundos
+        setInterval(createConfetti, 300);
+        
+        // Animación de entrada para el recuerdo
+        document.querySelector('.memory-card').addEventListener('mouseenter', function() {
+            for(let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    createConfetti();
+                }, i * 100);
+            }
+            
+            const hearts = ['❤️', '💙', '💜', '💛', '💚'];
+            const heart = document.createElement('div');
+            heart.className = 'floating-element';
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = '50%';
+            heart.style.top = '50%';
+            heart.style.fontSize = '3rem';
+            heart.style.opacity = '1';
+            heart.style.animation = 'none';
+            heart.style.transform = 'translate(-50%, -50%) scale(1)';
+            heart.style.transition = 'all 1.5s ease-out';
+            this.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.style.transform = 'translate(-50%, -50%) scale(10)';
+                heart.style.opacity = '0';
+            }, 300);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 1800);
+        });
+        // Agregar al final de script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // ... código existente ...
+    
+    // ======================================
+    // CERRAR SESIÓN
+    // ======================================
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+            // Mostrar feedback visual
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saliendo...';
+            this.disabled = true;
+            
+            // Simular proceso de cierre
+            setTimeout(() => {
+                // Redirigir a página de login
+                window.location.href = 'index.html';
+            }, 1000);
+        });
+    }
+});
+    </script>
+</body>
+</html>
