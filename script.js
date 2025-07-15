@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     
     // Credenciales válidas (Cámbialas según necesites)
-    const USER_CORRECTO = "X10M1_2025";
+    const USER_CORRECTO = "XiomarA";
     const PASS_CORRECTO = "L0M0_S4LT4D0";
 
     loginForm.addEventListener('submit', (event) => {
